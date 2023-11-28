@@ -9,7 +9,7 @@ export type PeopleType = {
 
 export type CountryType = {
     name: string,
-    people: PeopleType[],
+    people?: PeopleType[],
 }
 
 const data: CountryType[] = [{

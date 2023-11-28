@@ -44,7 +44,7 @@ export function filterCountriesData({
   return countriesData.map(
     (country) => ({
       ...country,
-      people: country.people.map(
+      people: country.people?.map(
         (peopleData) => filterPeopleAnimals({ peopleData, filterCondition })
       ),
     })

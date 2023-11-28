@@ -1,6 +1,6 @@
 import {describe, expect, it} from "vitest";
 import {filterCountriesData, filterPeopleAnimals} from "../services/filter";
-import {AnimalType, CountryType, PeopleType} from "../data/data";
+import {CountryType, PeopleType} from "../data/data";
 import {mockedCountriesData, mockedPeopleData} from "./mocks";
 
 describe("filterPeopleAnimals", () => {

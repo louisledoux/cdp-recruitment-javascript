@@ -1,9 +1,5 @@
-import {describe, expect, it, vi} from "vitest";
+import {describe, expect, it} from "vitest";
 import {processArguments} from "../utils/commands";
-
-const methods = {
-  filterCountriesData: () => vi.fn(),
-}
 
 describe("processArguments", () => {
   it('should be defined', () => {

@@ -3,11 +3,15 @@ import {app, processArguments} from "../app";
 
 describe("app", () => {
   it('should be defined', () => {
-    expect(() => app()).toBeDefined();
+    expect(app).toBeDefined();
   });
 })
 
 describe("processArguments", () => {
+  it('should be defined', () => {
+    expect(processArguments).toBeDefined();
+  });
+
   it('should return an error when no arguments is given in command-line', () => {
     const args: string[] = [];
     expect(() => processArguments(args)).toThrowError();

@@ -4,7 +4,7 @@ export type AnimalType = {
 
 export type PeopleType = {
     name: string,
-    animals: AnimalType[],
+    animals?: AnimalType[],
 }
 
 export type CountryType = {

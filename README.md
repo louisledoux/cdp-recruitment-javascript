@@ -1,6 +1,23 @@
 # Javascript developer test
 
-## Filter
+## Run instructions
+
+To run the project, you first need to install the dependencies and compile TS files
+```shell script
+$ npm install && npm run build
+```
+
+You will then be able to run the following commands from console:
+```shell script
+$ node src/app.js --filter=<your-filter>
+```
+```shell script
+$ node src/app.js --count
+```
+
+## Test instructions
+
+### Filter
 
 Your job is to write a command-line interface in Node.js. 
 This program has to filter a list of elements containing a pattern.
@@ -44,7 +61,7 @@ $ node app.js --filter=ry
 ]
 ```
 
-## Count
+### Count
 
 The next goal is to print the counts of People and Animals by counting the number of children and appending it in the name, eg. `Satanwi [2]`.
 

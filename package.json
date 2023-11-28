@@ -2,8 +2,9 @@
   "name": "cdp-recruitment-javascript",
   "version": "1.0.0",
   "description": "",
-  "main": "data.js",
+  "main": "src/app.ts",
   "scripts": {
+    "build": "tsc --project tsconfig.build.json",
     "test": "vitest"
   },
   "author": "",

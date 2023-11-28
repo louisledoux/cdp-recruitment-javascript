@@ -374,3 +374,72 @@ export const mockedCountriesDataWithCounts: CountryType[] = [
         }]
   }
 ];
+
+export const mockedFilteredCountriesData: CountryType[] = [
+  {
+    name: 'Dillauti',
+    people:
+      [
+        {
+          name: 'Winifred Graham',
+        },
+        {
+          name: 'Blanche Viciani',
+          animals:
+            [
+              {name: 'Rhea'},
+              {name: 'Guinea Fowl'},
+            ]
+        },
+        {
+          name: 'Philip Murray',
+        },
+        {
+          name: 'Bobby Ristori',
+        },
+        {
+          name: 'Louise Pinzauti',
+        }]
+  },
+  {
+    name: 'Tohabdal',
+    people:
+      [
+        {
+          name: 'Effie Houghton',
+        },
+        {
+          name: 'Essie Bennett',
+        },
+        {
+          name: 'Owen Bongini',
+        },
+        {
+          name: 'Alexander Fleury',
+        },
+        {
+          name: 'Curtis Fuchs',
+        },
+        {
+          name: 'Maud Lorenzo',
+          animals:
+            [
+              {name: 'Sea Urchin'},
+            ]
+        },
+        {
+          name: 'Linnie Lamb',
+          animals:
+            [
+              {name: 'California Sea Lion'},
+            ]
+        },
+        {
+          name: 'Randall Benoît',
+          animals:
+            [
+              {name: 'Bee-eater'},
+            ]
+        }]
+  }
+];

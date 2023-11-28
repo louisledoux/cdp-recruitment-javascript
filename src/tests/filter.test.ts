@@ -1,7 +1,7 @@
 import {describe, expect, it} from "vitest";
 import {filterCountriesData, filterPeopleAnimals} from "../services/filter";
 import {CountryType, PeopleType} from "../data/data";
-import {mockedCountriesData, mockedPeopleData} from "./mocks";
+import {mockedCountriesData, mockedFilteredCountriesData, mockedPeopleData} from "./mocks";
 
 describe("filterPeopleAnimals", () => {
   it('should be defined', () => {
@@ -59,76 +59,6 @@ describe("filterCountriesData", () => {
 
   it('should return the filtered list of countries and people, with their filtered animals', () => {
     const filterCondition = "ea";
-
-    const result: CountryType[] = [
-      {
-        name: 'Dillauti',
-        people:
-          [
-            {
-            name: 'Winifred Graham',
-            },
-            {
-              name: 'Blanche Viciani',
-              animals:
-                [
-                  {name: 'Rhea'},
-                  {name: 'Guinea Fowl'},
-                ]
-            },
-            {
-              name: 'Philip Murray',
-            },
-            {
-              name: 'Bobby Ristori',
-            },
-            {
-              name: 'Louise Pinzauti',
-            }]
-      },
-      {
-        name: 'Tohabdal',
-        people:
-          [
-            {
-            name: 'Effie Houghton',
-            },
-            {
-              name: 'Essie Bennett',
-            },
-            {
-              name: 'Owen Bongini',
-            },
-            {
-              name: 'Alexander Fleury',
-            },
-            {
-              name: 'Curtis Fuchs',
-            },
-            {
-              name: 'Maud Lorenzo',
-              animals:
-                [
-                  {name: 'Sea Urchin'},
-                ]
-            },
-            {
-              name: 'Linnie Lamb',
-              animals:
-                [
-                  {name: 'California Sea Lion'},
-                ]
-            },
-            {
-              name: 'Randall Benoît',
-              animals:
-                [
-                  {name: 'Bee-eater'},
-                ]
-            }]
-      }
-    ];
-
-    expect(filterCountriesData({ countriesData: mockedCountriesData, filterCondition })).toStrictEqual(result);
+    expect(filterCountriesData({ countriesData: mockedCountriesData, filterCondition })).toStrictEqual(mockedFilteredCountriesData);
   });
 });

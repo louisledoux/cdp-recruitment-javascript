@@ -1,4 +1,18 @@
-const data = [{
+export type AnimalType = {
+    name: string,
+}
+
+export type PeopleType = {
+    name: string,
+    animals: AnimalType[],
+}
+
+export type CountryType = {
+    name: string,
+    people: PeopleType[],
+}
+
+const data: CountryType[] = [{
   name: 'Dillauti',
   people:
     [{
@@ -370,5 +384,5 @@ const data = [{
 ]
 
 module.exports = {
-  data
+  data,
 }

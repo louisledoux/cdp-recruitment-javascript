@@ -12,7 +12,7 @@ export type CountryType = {
     people?: PeopleType[],
 }
 
-const data: CountryType[] = [{
+export const data: CountryType[] = [{
   name: 'Dillauti',
   people:
     [{
@@ -381,8 +381,4 @@ const data: CountryType[] = [{
               {name: 'Oryx'}]
         }]
   }
-]
-
-module.exports = {
-  data,
-}
+];

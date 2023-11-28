@@ -1,11 +1,9 @@
-import {describe, expect, it} from "vitest";
-import {app, processArguments} from "../app";
+import {describe, expect, it, vi} from "vitest";
+import {processArguments} from "../utils/commands";
 
-describe("app", () => {
-  it('should be defined', () => {
-    expect(app).toBeDefined();
-  });
-})
+const methods = {
+  filterCountriesData: () => vi.fn(),
+}
 
 describe("processArguments", () => {
   it('should be defined', () => {
@@ -28,8 +26,8 @@ describe("processArguments", () => {
   });
 
   it('should return the response of the filter service when the filter argument is called in command-line', () => {
-    const args = ["--filter=ry"];
-    expect(processArguments(args)).toBe('Filter service');
+    const args = ["--filter=ea"];
+    expect(processArguments(args)).toBeTypeOf("object");
   });
 
   it('should return an error when the filter argument is called without parameters in command-line', () => {
@@ -44,6 +42,6 @@ describe("processArguments", () => {
 
   it('should return the response of the count service when the count argument is called in command-line', () => {
     const args = ["--count"];
-    expect(processArguments(args)).toBe('Count service');
+    expect(processArguments(args)).toBeTypeOf("object");
   });
 })

@@ -6,7 +6,7 @@ import {
   countNumberOfPeopleInCountry
 } from "../services/count";
 import {CountryType, PeopleType} from "../data/data";
-import {mockedCountriesData, mockedCountriesDataWithCounts, mockedCountryData, mockedPeopleData} from "./mocks";
+import {countriesTestData, countriesWithCountsExpectedData, countryTestData, peopleTestData} from "./testDatas";
 
 describe("countNumberOfAnimalsInPeople", () => {
   it('should be defined', () => {
@@ -18,14 +18,14 @@ describe("countNumberOfAnimalsInPeople", () => {
       name: 'Adam Sanders',
     };
 
-    const result = 0;
+    const expectedResult = 0;
 
-    expect(countNumberOfAnimalsInPeople(peopleData)).toBe(result);
+    expect(countNumberOfAnimalsInPeople(peopleData)).toBe(expectedResult);
   });
 
   it('should return the number of animals in the people', () => {
-    const result = 8;
-    expect(countNumberOfAnimalsInPeople(mockedPeopleData)).toBe(result);
+    const expectedResult = 8;
+    expect(countNumberOfAnimalsInPeople(peopleTestData)).toBe(expectedResult);
   });
 });
 
@@ -38,13 +38,13 @@ describe("countNumberOfPeopleInCountry", () => {
     const countryData: CountryType = {
       name: 'Eorzea',
     }
-    const result = 0;
-    expect(countNumberOfPeopleInCountry(countryData)).toBe(result);
+    const expectedResult = 0;
+    expect(countNumberOfPeopleInCountry(countryData)).toBe(expectedResult);
   });
 
   it('should return the number of people in the country', () => {
-    const result = 5;
-    expect(countNumberOfPeopleInCountry(mockedCountryData)).toBe(result);
+    const expectedResult = 5;
+    expect(countNumberOfPeopleInCountry(countryTestData)).toBe(expectedResult);
   });
 })
 
@@ -65,9 +65,9 @@ describe("appendCountToParentName", () => {
     const name = 'Eorzea';
     const countValue = 2;
 
-    const result = `${name} [${countValue}]`;
+    const expectedResult = `${name} [${countValue}]`;
 
-    expect(appendCountToParentName({ name, countValue })).toBe(result);
+    expect(appendCountToParentName({ name, countValue })).toBe(expectedResult);
   });
 });
 
@@ -77,6 +77,6 @@ describe("appendChildrenCountsToCountriesData", () => {
   });
 
   it('should return the updated countries data with counts appended', () => {
-    expect(appendChildrenCountsToCountriesData(mockedCountriesData)).toStrictEqual(mockedCountriesDataWithCounts);
+    expect(appendChildrenCountsToCountriesData(countriesTestData)).toStrictEqual(countriesWithCountsExpectedData);
   });
 })

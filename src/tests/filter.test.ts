@@ -1,7 +1,7 @@
 import {describe, expect, it} from "vitest";
 import {filterCountriesData, filterPeopleAnimals} from "../services/filter";
 import {PeopleType} from "../data/data";
-import {mockedCountriesData, mockedFilteredCountriesData, mockedPeopleData} from "./mocks";
+import {countriesTestData, filteredCountriesExpectedData, peopleTestData} from "./testDatas";
 
 describe("filterPeopleAnimals", () => {
   it('should be defined', () => {
@@ -11,7 +11,7 @@ describe("filterPeopleAnimals", () => {
   it('should return a people with its filtered animals containing the filter condition', () => {
     const filterCondition = "al";
 
-    const result: PeopleType = {
+    const expectedResult: PeopleType = {
       name: 'Winifred Graham',
       animals: [
         {name: 'Narwhal'},
@@ -19,13 +19,13 @@ describe("filterPeopleAnimals", () => {
       ],
     };
 
-    expect(filterPeopleAnimals({ peopleData: mockedPeopleData, filterCondition })).toStrictEqual(result);
+    expect(filterPeopleAnimals({ peopleData: peopleTestData, filterCondition })).toStrictEqual(expectedResult);
   });
 
   it('should keep the order of animals intact after filtering', () => {
     const filterCondition = "oa";
 
-    const result: PeopleType = {
+    const expectedResult: PeopleType = {
       name: 'Winifred Graham',
       animals: [
         {name: 'Anoa'},
@@ -33,17 +33,17 @@ describe("filterPeopleAnimals", () => {
       ],
     };
 
-    expect(filterPeopleAnimals({ peopleData: mockedPeopleData, filterCondition })).toStrictEqual(result);
+    expect(filterPeopleAnimals({ peopleData: peopleTestData, filterCondition })).toStrictEqual(expectedResult);
   });
 
   it('should not return an animals key if the filtered animals array is empty', () => {
     const filterCondition = "xyz";
 
-    const result: PeopleType = {
+    const expectedResult: PeopleType = {
       name: 'Winifred Graham',
     };
 
-    expect(filterPeopleAnimals({ peopleData: mockedPeopleData, filterCondition })).toStrictEqual(result);
+    expect(filterPeopleAnimals({ peopleData: peopleTestData, filterCondition })).toStrictEqual(expectedResult);
   });
 });
 
@@ -54,11 +54,11 @@ describe("filterCountriesData", () => {
 
   it('should throw an error when an empty filter condition is given', () => {
     const filterCondition = "";
-    expect(() => filterCountriesData({ countriesData: mockedCountriesData, filterCondition })).toThrowError();
+    expect(() => filterCountriesData({ countriesData: countriesTestData, filterCondition })).toThrowError();
   });
 
   it('should return the filtered list of countries and people, with their filtered animals', () => {
     const filterCondition = "ea";
-    expect(filterCountriesData({ countriesData: mockedCountriesData, filterCondition })).toStrictEqual(mockedFilteredCountriesData);
+    expect(filterCountriesData({ countriesData: countriesTestData, filterCondition })).toStrictEqual(filteredCountriesExpectedData);
   });
 });

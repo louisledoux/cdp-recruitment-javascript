@@ -1,6 +1,6 @@
 import {CountryType, PeopleType} from "../data/data";
 
-export const mockedCountryData: CountryType = {
+export const countryTestData: CountryType = {
     name: 'Dillauti',
     people:
       [
@@ -61,7 +61,7 @@ export const mockedCountryData: CountryType = {
         }]
   };
 
-export const mockedCountriesData: CountryType[] = [
+export const countriesTestData: CountryType[] = [
   {
   name: 'Dillauti',
   people:
@@ -210,7 +210,7 @@ export const mockedCountriesData: CountryType[] = [
   }
 ];
 
-export const mockedPeopleData: PeopleType = {
+export const peopleTestData: PeopleType = {
   name: 'Winifred Graham',
   animals: [
     {name: 'Anoa'},
@@ -224,7 +224,7 @@ export const mockedPeopleData: PeopleType = {
   ],
 };
 
-export const mockedCountriesDataWithCounts: CountryType[] = [
+export const countriesWithCountsExpectedData: CountryType[] = [
   {
     name: 'Dillauti [5]',
     people:
@@ -375,7 +375,7 @@ export const mockedCountriesDataWithCounts: CountryType[] = [
   }
 ];
 
-export const mockedFilteredCountriesData: CountryType[] = [
+export const filteredCountriesExpectedData: CountryType[] = [
   {
     name: 'Dillauti',
     people:

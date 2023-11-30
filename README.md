@@ -3,14 +3,17 @@
 ## Run instructions
 
 To run the project, you first need to install the dependencies and compile TS files
+
 ```shell script
 $ npm install && npm run build
 ```
 
 You will then be able to run the following commands from console:
+
 ```shell script
 $ node src/app.js --filter=<your-filter>
 ```
+
 ```shell script
 $ node src/app.js --count
 ```
@@ -19,10 +22,11 @@ $ node src/app.js --count
 
 ### Filter
 
-Your job is to write a command-line interface in Node.js. 
+Your job is to write a command-line interface in Node.js.
 This program has to filter a list of elements containing a pattern.
 
 Details:
+
 - In the following file `data.js`, there are `Countries` containing `Peoples` containing `Animals`.
 - Only animals containing the pattern passed as argument (e.g. `ry`) are displayed. The order should be kept intact.
 - Empty array after filtering are NOT returned.

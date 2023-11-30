@@ -381,45 +381,18 @@ export const mockedFilteredCountriesData: CountryType[] = [
     people:
       [
         {
-          name: 'Winifred Graham',
-        },
-        {
           name: 'Blanche Viciani',
           animals:
             [
               {name: 'Rhea'},
               {name: 'Guinea Fowl'},
             ]
-        },
-        {
-          name: 'Philip Murray',
-        },
-        {
-          name: 'Bobby Ristori',
-        },
-        {
-          name: 'Louise Pinzauti',
-        }]
+        },]
   },
   {
     name: 'Tohabdal',
     people:
       [
-        {
-          name: 'Effie Houghton',
-        },
-        {
-          name: 'Essie Bennett',
-        },
-        {
-          name: 'Owen Bongini',
-        },
-        {
-          name: 'Alexander Fleury',
-        },
-        {
-          name: 'Curtis Fuchs',
-        },
         {
           name: 'Maud Lorenzo',
           animals:

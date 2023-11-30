@@ -41,12 +41,28 @@ export function filterCountriesData({
 }: filterCountriesDataType) {
   if (!filterCondition) throw new Error("Filter condition is empty");
 
-  return countriesData.map(
-    (country) => ({
-      ...country,
-      people: country.people?.map(
-        (peopleData) => filterPeopleAnimals({ peopleData, filterCondition })
-      ),
-    })
-  );
+  return countriesData.reduce((acc: CountryType[], country: CountryType) => {
+    const peopleWithFilteredAnimals = country.people?.reduce((peopleAcc: PeopleType[], peopleData: PeopleType) => {
+      const filteredPeople = filterPeopleAnimals({ peopleData, filterCondition });
+
+      // Return only the people if they have animals after filter condition is applied
+      if (filteredPeople.animals) {
+        peopleAcc.push(filteredPeople);
+      }
+
+      return peopleAcc;
+    }, []);
+
+    // Return only countries if they have people with animals after filter condition is applied
+    if (peopleWithFilteredAnimals?.length) {
+      const filteredCountry: CountryType = {
+        name: country.name,
+        people: peopleWithFilteredAnimals,
+      };
+
+      acc.push(filteredCountry);
+    }
+
+    return acc;
+  }, []);
 }
